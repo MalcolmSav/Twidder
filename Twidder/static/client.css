@@ -1,0 +1,328 @@
+body
+{
+    background-color: lightblue;
+    background-image: linear-gradient(180deg, lightblue, blue);
+    height: 1200px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin-right: 10px;
+}
+
+#tabs
+{
+    font-family: arial;
+    font-size: 24px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-width: 1px;
+    border-style: solid;
+    
+}
+
+#changePasswordFrame
+{
+    border: solid 1px;
+    width: 300px;
+    height: 370px;
+    background-color: #1da1f2;
+    margin: auto;
+}
+  
+#changePasswordForm label {
+    font-size: 18px;
+  }
+  
+#changePasswordForm input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+#changePasswordForm button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#changePassword button[type="button"]
+{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+main {
+    padding: 10px;
+}
+  
+section {
+    background-color: #f5f8fa;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#welcome
+{
+    height: 400px;
+    width: 600px;
+    margin: auto;
+    margin-top: 100px;
+    min-width: 0;
+    max-width:100%;
+}
+
+#logo-slogan
+{
+    height: 400px;
+    width: 340px;
+    background-color: white;
+    float: left;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+#login
+{
+    height: 110px;
+    width: 250px;
+    background-color: white;
+    float: right;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    text-align: left;
+}
+
+#signup
+{
+    height: 280px;
+    width: 250px;
+    background-color: white;
+    float: right;
+    margin-top: 8px;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+input
+{
+    float: right;
+}
+
+form div
+{
+    height: 20px;
+    padding: 2px;
+}
+
+select
+{
+    float: right;
+    width: 145px;
+    
+}
+
+label
+{
+    font-size: 100%;
+}
+
+button[type=submit]
+{
+    float: right;
+    position: relative;
+    top: 0%;
+}
+
+#login-button
+{
+    position: relative;
+    top: 0%;
+}
+
+#SignUp-button
+{
+    position: relative;
+    margin-top: 10px;
+    bottom: 0;
+}
+
+p
+{
+    text-align: center;
+    font-weight: bold;
+}
+
+.tabButton
+{
+    background: none;
+    border: none;
+    padding: 0!;
+    font-family: arial, sans-serif;
+    color: #069;
+    cursor: pointer;
+    font-size: large;
+}
+
+.postWall
+{
+    width: 50%;
+    margin: auto;
+    margin-top: 0%;
+}
+
+#postFormBrowse
+{
+
+}
+
+#postFormHome
+{
+
+}
+
+.postWall button
+{
+    height: 86px;
+    width: 28%;
+}
+
+.messageWall
+{
+    width: 100%;
+    height: auto;
+    text-align: left;
+
+}
+
+.messageInput
+{
+
+    resize: none;
+    width: 70%;
+    height: auto;
+}
+
+
+
+#homeDiv
+{
+    height: 100%;
+    width: 100%;
+}
+
+#container
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#browseDiv
+{
+    height: 100%;
+    width: 100%;
+}
+
+#personalInfo
+{
+    height: 100%;
+    width: 200px;
+    background-image: linear-gradient(270deg, lightblue, rgba(153, 153, 221, 0.822));
+
+}
+
+#signOutBtn
+{
+    margin: 0px;
+    width: 100px;
+}
+
+h2
+{
+    text-align: center;
+}
+
+.reloadButton
+{
+    height: 50px;
+    width:  50px;
+    border: solid 1px;
+}
+
+.reloadButton img
+{
+    height: 50px;
+    width: 50px;
+}
+
+#accountDiv
+{
+    height: 100%;
+    width: 100%;
+    margin-top: 10%;
+}
+
+#searchDiv
+{
+    width: 200px;
+    height: 50px;
+    border: solid 1px black;
+}
+
+#displayMessage
+{
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+    color: red;
+    position: absolute;
+    height: auto;
+    width: auto;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+li
+{
+    list-style-type: none;
+    border: solid 1px;
+    margin-top: 10px;
+    background-color: lightblue;
+}
+
+#inputOtherEmail
+{
+    float: left;
+}
+
+#searchButton
+{
+    width: 49px;
+}

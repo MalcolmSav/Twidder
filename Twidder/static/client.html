@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twidder</title>
+    <link href="static/client.css" type="text/css" rel="stylesheet">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="static/client.js" type="text/javascript"></script>
+    <script  type="text/html" id="welcomeView">
+        <div id="welcome">
+            <div id="logo-slogan" >
+                <img src="static/wimage.png">
+            </div>
+
+            <div id="login">
+            <br><br>
+                <form id="loginForm" onsubmit="loginForm(this);return false;">
+                    <div><label for="email">Email</label>
+                    <input type="email" name="email" id="email" value=""></div>
+                    <div><label for="password">Password</label>
+                    <input type="password" name="password" id="pwd" value=""></div>
+                    <button type="submit" name="login-button" id="login-button">Login</button>
+                </form>    
+            </div>
+
+            <div id="signup">
+                <p>Sign up here</p>
+                <form id="signupForm" onsubmit="signupForm(this);return false;">
+                   <div> <label for="fname">First name</label>
+                    <input type="text" name="fname" id="fname" value=""></div>
+                    <div><label for="lname">Last name</label>
+                    <input type="text" name="lname" id="lname" value=""></div>
+                    <div><label for="gender">Gender</label>
+                    <select id="gender" name="">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select></div>
+                    <div><label for="city">City</label>
+                    <input type="text" name="city" id="city" value=""></div>
+                    <div><label for="country">Country</label>
+                    <input type="text" name="country" id="country" value=""></div>
+                    <div><label for="email">Email</label>
+                    <input type="email" name="email" id="email" value=""></div>
+                    <div><label for="password">Password</label>
+                    <input type="password" name="password" id="pwd" value=""></div>
+                    <div><label for="repeatpsw">Repeat PSW</label>
+                    <input type="password" name="password" id="repeatpwd" value=""></div>
+                    <div><button type="submit" name="SignUp-button" id="button">SignUp</button></div>
+                </form>
+            </div>
+        </div>
+    </script>
+    <script type="text/html" id="profileView">
+
+        <div id="tabs">
+            <button class="tabButton" id="homeButton" onclick="openTab('home')">Home</button>
+            <button class="tabButton" id="browseButton" onclick="openTab('browse')">Browse</button>
+            <button class="tabButton" id="accountButton" onclick="openTab('account')">Account</button>
+        </div>    
+    
+        <div class="tab" id="homeDiv">            
+            <div class="reloadDiv">
+                <img class="reloadButton" src="static/reloadImage.png" onclick="loadWallHome()">
+            </div>
+            <div id="container">    
+                <div id="personalInfo">
+                    <p>Email: <span id="displayEmail"> </span> </p>
+                    <p>Name: <span id="displayName"> </span> </p>
+                    <p>Familyname: <span id="familyName"> </span> </p>
+                    <p>Gender: <span id="displayGender"> </span> </p>
+                    <p>City: <span id="displayCity"> </span> </p>
+                    <p>Country: <span id="displayCountry"> </span> </p>                     
+                </div>
+
+                <div class="postWall">    
+                    <form onsubmit="postFormHome(this);return false;">
+                        <textarea ondrop="drop(event)" ondragover="allowDrop(event)" class="messageInput" id="messageInputHome" rows="4" cols="50"></textarea>
+                        <button type="submit">Post</button>
+                    </form>
+                    <div class="messageWall" id="messageWallHome">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab" id="browseDiv" >
+            <div class="reloadDiv">
+                <img class="reloadButton" src="static/reloadImage.png" onclick="reloadWallBrowse()">
+                <div id="searchDiv">
+                    <form onsubmit="searchEmail(this);return false;">
+                       
+                        <label for="inputOtherEmail">Search for user, using email:</label> <br>
+                       <div> <input type="email" id="inputOtherEmail">
+                       
+                        <button type="submit" id="searchButton">Search</button></div>
+                    </form>
+                </div>
+            </div>
+            <div id="container">    
+                <div id="personalInfo">
+                <!--<img src="static/profile_pic.jpg" alt="Profile Picture">-->
+                    <p>Email: <span id="otherEmail"> </span> </p>
+                    <p>Name: <span id="otherName"> </span> </p>
+                    <p>Familyname: <span id="otherFamilyName"> </span> </p>
+                    <p>Gender: <span id="otherGender"> </span> </p>
+                    <p>City: <span id="otherCity"> </span> </p>
+                    <p>Country: <span id="otherCountry"> </span> </p>                     
+                </div>
+                <div class="postWall">
+                    <form onsubmit="postFormBrowse(this);return false;">
+                        <textarea ondrop="drop(event)" ondragover="allowDrop(event)"  class="messageInput" id="messageInputBrowse" rows="4" cols="50"></textarea>
+                        <button type="submit">Post</button>
+                    </form>
+                    <div class="messageWall" id="messageWallBrowse">
+                    </div>
+
+                </div> 
+                
+            </div>
+            
+        </div>
+        
+        <div class="tab" id="accountDiv" >
+            <div id="changePasswordFrame">
+                <h2>Settings</h2>
+                <div id="changePassword">
+                    <form id="changePasswordForm" onsubmit="changePasswordForm(this);return false;">
+                    <div><label for="currentPassword">Current Password:</label>
+                    <input type="password" id="currentPassword" name="currentPassword"></div>
+                    <br>
+                    <div><label for="newPassword">New Password:</label>
+                    <input type="password" id="newPassword" name="newPassword"></div>
+                    <br>
+                    <div><label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword"></div>
+                    <br>
+                    <button type="submit">Save Changes</button>
+                    
+                    </form>
+                    <button type="button" id="signOutBtn" onclick="signOut()">Sign out</button>
+                </div>
+            </div>
+        </div>  
+    </script>
+
+  </head>
+  <body>
+    <div id="displayMessage"></div>
+    <div id="main">
+
+    </div>
+  </body>
+</html>
